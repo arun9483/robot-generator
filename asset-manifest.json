@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/robot-generator/static/css/main.4c894594.css",
+    "main.js": "/robot-generator/static/js/main.babb89bb.js",
+    "static/js/787.c190c795.chunk.js": "/robot-generator/static/js/787.c190c795.chunk.js",
+    "index.html": "/robot-generator/index.html",
+    "main.4c894594.css.map": "/robot-generator/static/css/main.4c894594.css.map",
+    "main.babb89bb.js.map": "/robot-generator/static/js/main.babb89bb.js.map",
+    "787.c190c795.chunk.js.map": "/robot-generator/static/js/787.c190c795.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c894594.css",
+    "static/js/main.babb89bb.js"
+  ]
+}
