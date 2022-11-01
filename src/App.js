@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Robot from './components/Robot';
 import './App.css';
 
 function App() {
+  const [list, updateList] = useState([]);
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const name = event.target.robot.value;
+    if (list.includes(name)) {
+      alert(`${name} robot already generated! try another one.`);
+    } else {
+      event.target.robot.value = '';
+      updateList([...list, name.trim()]);
+    }
+  };
+
+  const deleteHandler = (title) => {
+    const newList = list.filter((item) => item !== title);
+    updateList(newList);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main-container">
+        <div className="robot-generator">
+          <form action="/" method="get" onSubmit={submitHandler}>
+            <input type="text" placeholder="Generate Robot" name="robot" />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <div className="robot-list">
+          {list.map((item) => (
+            <Robot title={item} key={item} onDelete={deleteHandler} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
